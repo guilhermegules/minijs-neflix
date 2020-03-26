@@ -2,4 +2,4 @@
 
 Project diagram 
 
-![](./projeto-junior.jpg)
+<img src="./projeto-junior.jpg" height="150" width="150">
