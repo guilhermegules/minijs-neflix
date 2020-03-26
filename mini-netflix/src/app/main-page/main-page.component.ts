@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { Video } from '../services/videos/video'
+import { VideosService } from './../services/videos/videos.service'
 
 @Component({
   selector: 'app-main-page',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  videos: Video[]
+  constructor (private videosService: VideosService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit (): void {
+    this.videosService
+      .getVideos()
+      .subscribe((data: Video[]) => (this.videos = data))
   }
-
 }

@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { ShowFilmComponent } from './show-film.component';
+import { ShowFilmComponent } from './show-film.component'
 
 describe('ShowFilmComponent', () => {
-  let component: ShowFilmComponent;
-  let fixture: ComponentFixture<ShowFilmComponent>;
+  let component: ShowFilmComponent
+  let fixture: ComponentFixture<ShowFilmComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ShowFilmComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [ShowFilmComponent]
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowFilmComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(ShowFilmComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

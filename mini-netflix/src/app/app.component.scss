@@ -1,11 +1,8 @@
 .container {
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
 
-.show-film {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+.navigation {
+  width: 100%;
 }

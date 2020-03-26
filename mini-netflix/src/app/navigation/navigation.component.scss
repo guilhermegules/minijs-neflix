@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+  background-color: rgb(12, 12, 12);
+  h1 {
+    color: red;
+    cursor: pointer;
+  }
+  a {
+    color: white;
+    margin: 2em;
+    text-decoration: none;
+    transition: .5s;
+    &:hover {
+      transition: .5s;
+      color: rgb(138, 138, 138);
+    }
+  }
+}

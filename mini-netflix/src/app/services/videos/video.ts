@@ -1,8 +1,8 @@
 export interface Video {
-  id: string,
+  id: string
   snippet: {
-    title: string,
-    description: string,
+    title: string
+    description: string
     thumbnails: {
       medium: {
         url: string

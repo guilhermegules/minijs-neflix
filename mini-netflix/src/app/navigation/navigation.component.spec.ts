@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { MainPageComponent } from './main-page.component'
+import { NavigationComponent } from './navigation.component'
 
-describe('MainPageComponent', () => {
-  let component: MainPageComponent
-  let fixture: ComponentFixture<MainPageComponent>
+describe('NavigationComponent', () => {
+  let component: NavigationComponent
+  let fixture: ComponentFixture<NavigationComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [MainPageComponent]
+      declarations: [NavigationComponent]
     }).compileComponents()
   }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainPageComponent)
+    fixture = TestBed.createComponent(NavigationComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

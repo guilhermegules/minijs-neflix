@@ -1,6 +1,4 @@
-import { VideosService } from './../services/videos/videos.service';
-import { Component, OnInit } from '@angular/core';
-import { Video } from '../services/videos/video';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-show-film',
@@ -8,13 +6,7 @@ import { Video } from '../services/videos/video';
   styleUrls: ['./show-film.component.scss']
 })
 export class ShowFilmComponent implements OnInit {
-  videos: Video[];
-  constructor(private videosService: VideosService) { }
+  constructor () {}
 
-  ngOnInit(): void {
-    this.videosService
-    .getVideos()
-    .subscribe((data: Video[]) => this.videos = data)
-  }
-
+  ngOnInit (): void {}
 }
