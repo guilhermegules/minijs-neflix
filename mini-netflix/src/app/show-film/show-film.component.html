@@ -1,1 +1,11 @@
-<p>show-film works!</p>
+<button class="left-button"><</button>
+<div class="container">
+  <div *ngFor="let item of videos">
+    <img
+      class="film-image"
+      src="{{ item.snippet.thumbnails.medium.url }}"
+      alt=""
+    />
+  </div>
+</div>
+<button class="right-button">></button>

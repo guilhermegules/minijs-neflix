@@ -10,12 +10,12 @@ import { tap } from  'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  AUTH_SERVER = 'http://localhost:3333';
+  AUTH_SERVER = 'http://localhost:3333/login';
   authSubject = new BehaviorSubject(false);
   constructor(private httpClient: HttpClient) { }
 
   signIn(user: User): Observable<Response> {
-    return this.httpClient.post(`${this.AUTH_SERVER}/login`, user).pipe(
+    return this.httpClient.post(`${this.AUTH_SERVER}`, user).pipe(
       tap(async (res: Response) => {
         if (res.user) {
           localStorage.setItem('ACCESS_TOKEN', res.user.access_token);
