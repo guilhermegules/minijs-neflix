@@ -1,21 +1,51 @@
 .menu {
   display: flex;
   align-items: center;
-  padding-left: 0.5em;
-  margin-bottom: 1em;
-  background-color: rgb(12, 12, 12);
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(12, 12, 12, 0.5);
   h1 {
     color: red;
     cursor: pointer;
+    padding-left: 0.5em;
   }
   a {
     color: white;
     margin: 2em;
     text-decoration: none;
-    transition: .5s;
+    transition: 0.5s;
+    float: left;
+    display: block;
+    cursor: pointer;
     &:hover {
-      transition: .5s;
+      transition: 0.5s;
       color: rgb(138, 138, 138);
     }
+  }
+}
+
+.menu .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .menu a:not(:first-child) {
+    display: none;
+  }
+  .menu a.icon {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu.mobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu.mobile a {
+    display: block;
+    text-align: left;
   }
 }

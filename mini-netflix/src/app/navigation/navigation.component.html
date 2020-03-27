@@ -1,6 +1,8 @@
-<nav class="menu">
+<nav class="menu" [ngClass]="{'mobile': menuMobile}">
   <h1>Netflix</h1>
+  <a class="icon fa fa-bars" (click)="toggleMenu()"></a>
   <a routerLink="main-page">Home</a>
   <a routerLink="profile">Profile</a>
   <a routerLink="metrics">Metrics</a>
+  <a routerLink="login">logout</a>
 </nav>

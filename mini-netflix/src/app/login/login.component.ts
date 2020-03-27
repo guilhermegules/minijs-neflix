@@ -1,7 +1,7 @@
+import { User } from './../services/auth/user';
 import { AuthService } from './../services/auth/auth.service'
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { Video } from '../services/videos/video'
 
 @Component({
   selector: 'app-login',
@@ -9,16 +9,20 @@ import { Video } from '../services/videos/video'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  video: Video[]
+  users: User[];
+  logIn: boolean;
   constructor (private authService: AuthService, private router: Router) {}
 
-  ngOnInit (): void {}
+  ngOnInit (): void {
+    this.authService.signIn().subscribe((response: User[]) => this.users = response)
+  }
 
-  login (form) {
-    console.log(form.value)
-    this.authService.signIn(form.value).subscribe((res) => {
-      console.log('Logged in')
-      this.router.navigateByUrl('home')
-    })
+  login (id: number) {
+    this.users.forEach(element => {
+      if (id === element.id) {
+        this.logIn = true
+        console.log(this.logIn)
+      }
+    });
   }
 }

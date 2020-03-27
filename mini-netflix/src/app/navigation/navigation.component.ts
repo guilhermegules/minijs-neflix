@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  menuMobile: boolean = false;
   constructor () {}
 
   ngOnInit (): void {}
+
+  toggleMenu (): void {
+    this.menuMobile = !this.menuMobile;
+  }
 }

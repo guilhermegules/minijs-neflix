@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import { users } from '../user/users'
 dotenv.config()
 
-const url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=10'
+const url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=relevance&q=netflix%20trailer&type=video'
 
 const routes = Router()
 
@@ -18,12 +18,9 @@ routes.get('/', (req, res) => {
     })
 })
 
-//todo login
-routes.post('/login', (req, res) => {
-  const email = req.body.email
-  const password = req.body.password
+routes.get('/login', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200')
-  res.status(200).send()
+  res.send(users)
 })
 
 routes.get('*', (req, res) => {

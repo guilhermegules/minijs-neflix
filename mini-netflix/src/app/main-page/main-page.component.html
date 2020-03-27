@@ -1,9 +1,16 @@
 <section class="container">
+  <img
+    class="banner"
+    src="../../assets/background.png"
+    alt="New series banner"
+  />
   <div class="videos-container" *ngFor="let item of videos">
-    <img
-      class="film-image"
-      src="{{ item.snippet.thumbnails.medium.url }}"
-      alt="{{ item.snippet.title }}"
-    />
+    <a href="https://www.youtube.com/watch?v={{ item.id.videoId }}">
+      <img
+        class="film-image"
+        src="{{ item.snippet.thumbnails.medium.url }}"
+        alt="{{ item.snippet.title }}"
+      />
+    </a>
   </div>
 </section>

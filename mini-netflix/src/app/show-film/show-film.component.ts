@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./show-film.component.scss']
 })
 export class ShowFilmComponent implements OnInit {
-  constructor () {}
+  constructor() {
+    
+  }
+  
+  ngOnInit (): void {
 
-  ngOnInit (): void {}
+  }
 }

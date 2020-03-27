@@ -1,89 +1,28 @@
 .container {
-  background:rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-  width:409px;
-  display: flex;  
-  flex-direction: column;
-}
-
-.logo{
-  font-size:20px;
-  text-align: center;
-  padding: 20px 20px 0;
-  margin:0;
-  color: #ccc;
-}
-
-.login-item {
-    color: #fff;
-    padding:25px 25px 0;
-    margin: 20px 20px 0;	
-    border-radius: 3px;
-}
-
-input {
-  border: 0;
-  font-size: 1em;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  transition: background-color .3s;
-}
-
-.form input {
-  width: 100%;
-}
-
-.form-login label,
-.form-login input[type="email"],
-.form-login input[type="password"],
-.form-login input[type="submit"] {
-  border-radius: 0.25rem;
-  padding: 1rem;
-  color: #3A3F44;  
-}
-
-.form-login label {
-  background-color: #222222;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.form-login input[type="email"], 
-.form-login input[type="password"] {
-  background-color: #ffffff;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-
-.form-login input[type="email"]:focus, 
-.form-login input[type="password"]:focus {
-  background-color: #dddddd;
-}
-
-.form-login input[type="submit"] {
-  background-color: rgb(185, 17, 11);
-  color: #eee;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.form-login input[type="submit"]:hover {
-  background-color: #2e0a0a;
-}
-
-.form-field {
   display: flex;
-  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 90vh;
+  color: white
 }
 
-.hidden {
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 2%;
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon {
+  width: 10em;
+  height: 10em;
+  border-radius: .3em;
+  margin: 2em;
+  border: solid 2px rgba(255, 255, 255, 0.1);
+  &:hover {
+    border: solid 2px rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px) scale(1.1);
+  }
 }
