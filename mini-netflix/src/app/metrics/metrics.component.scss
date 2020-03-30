@@ -1,3 +1,60 @@
 .container {
   color: white;
+  height: 100vh;
+  .title {
+    font-size: 4em;
+    margin: .5em 0 .5em .5em;
+  }
+  .subtitle {
+    margin: .5em 0 .5em 1em;
+    font-size: 2em;
+  }
+}
+
+.videos-metrics {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  img {
+    margin-right: .1em;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transition: .2s;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.categorie {
+  h4 {
+    font-size: 1.3em;
+    margin: 1em;
+  }
+  button {
+    width: 4em;
+    height: 100%;
+  }
+}
+
+.videos-metrics::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.videos-metrics::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+.videos-metrics::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+
+@media screen and (max-width: 600px) {
+  .videos-metrics::-webkit-scrollbar {
+    display: none;
+  }
 }

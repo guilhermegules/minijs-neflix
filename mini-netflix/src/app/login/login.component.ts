@@ -1,7 +1,9 @@
-import { User } from './../services/auth/user';
-import { AuthService } from './../services/auth/auth.service'
-import { Component, OnInit } from '@angular/core'
+import { ProfileComponent } from './../profile/profile.component';
 import { Router } from '@angular/router'
+import { User } from './../services/auth/user'
+import { AuthService } from './../services/auth/auth.service'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { FormGroup, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -9,20 +11,25 @@ import { Router } from '@angular/router'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  users: User[];
-  logIn: boolean;
+  users: User[]
+  @ViewChild(ProfileComponent) profile
+  profileForm = new FormGroup({
+    email: new FormControl(''),
+    pass: new FormControl(''),
+  });
   constructor (private authService: AuthService, private router: Router) {}
 
   ngOnInit (): void {
     this.authService.signIn().subscribe((response: User[]) => this.users = response)
   }
 
-  login (id: number) {
-    this.users.forEach(element => {
-      if (id === element.id) {
-        this.logIn = true
-        console.log(this.logIn)
+  onSubmit() {
+    this.users.forEach(user => {
+      if(user.email === this.profileForm.value.email && user.pass === this.profileForm.value.pass) {
+        console.log(user)
+        this.profile = user
+        this.router.navigate(['/main-page'])
       }
-    });
+    })
   }
 }

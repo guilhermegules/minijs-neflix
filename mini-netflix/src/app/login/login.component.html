@@ -1,6 +1,9 @@
 <section class="container">
-  <div class="user" *ngFor="let user of users">
-      <img (click)="login(user.id)" class="user-icon" src="../../assets/user1.png" alt="">
-      <p>{{ user.name }}</p>
-  </div>
+  <img class="logo" src="../../assets/netflix.svg" alt="">
+  <h2>Login</h2>
+  <form class="login-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="email">
+    <input type="password" formControlName="pass">
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
 </section>

@@ -1,0 +1,34 @@
+.modal {
+  position: fixed;
+  top: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 2px 1px black;
+  z-index: 100;
+  button {
+    color: white;
+    background-color: transparent;
+    width: 1em;
+    height: 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-device-width : 640px) {
+  .modal {
+    top: 10px;
+  }
+}

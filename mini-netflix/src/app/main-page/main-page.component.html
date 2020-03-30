@@ -1,16 +1,24 @@
+<app-navigation></app-navigation>
 <section class="container">
   <img
     class="banner"
     src="../../assets/background.png"
     alt="New series banner"
   />
-  <div class="videos-container" *ngFor="let item of videos">
-    <a href="https://www.youtube.com/watch?v={{ item.id.videoId }}">
-      <img
-        class="film-image"
-        src="{{ item.snippet.thumbnails.medium.url }}"
-        alt="{{ item.snippet.title }}"
-      />
-    </a>
+  <div *ngFor="let categorie of categories">
+    <h4 (click)="toggleModal()">{{ categorie.title }}</h4>
+    <div class="videos-container">
+      <div *ngFor="let video of videos">
+        <img
+          class="film-image"
+          src="{{ video.snippet.thumbnails.medium.url }}"
+          alt="{{ video.snippet.title }}"
+        />
+      </div>
+    </div>
   </div>
+  <app-show-video
+  [modalState]="openShowVideo"
+  [videoId]="videoId"
+></app-show-video> 
 </section>

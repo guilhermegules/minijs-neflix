@@ -12,15 +12,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  p {
+    margin: .5em;
+  }
   img {
     width: 15em;
     height: 15em;
     margin-top: 1em;
-    border-radius: 0.5em;
+    border-radius: .5em;
   }
   ul {
-    border-radius: 0.2em;
-    border: 2px solid black;
     padding: 1em;
   }
   li {
@@ -30,7 +31,7 @@
 
 @media screen and (max-width: 600px) {
   .container {
-    padding-bottom: 0.2em;
+    padding-bottom: .2em;
   }
   img {
     width: 10em !important;
