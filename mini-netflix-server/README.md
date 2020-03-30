@@ -1,3 +1,5 @@
 ## Mini netflix server 
 
-Server of application
+Servidor da aplicação
+
+- Rodar o servidor com docker compose `docker-compose up`

@@ -11,7 +11,8 @@ export const users = [
       'Bird Box',
       'El Camino: A Breaking Bad Movie',
       'The Platform'
-    ]
+    ],
+    isAuthenticated: false
   },
   {
     id: 2,
@@ -25,7 +26,8 @@ export const users = [
       'Bird Box',
       '1922',
       'I Am Mother'
-    ]
+    ],
+    isAuthenticated: false
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export const users = [
       'The Perfection',
       'El Camino: A Breaking Bad Movie',
       'Velvet Buzzsaw'
-    ]
+    ],
+    isAuthenticated: false
   }
 ]

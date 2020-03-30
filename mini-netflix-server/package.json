@@ -8,7 +8,11 @@
     "build": "sucrase ./src -d .dist/ --transforms typescript,imports",
     "eslint": "./node_modules/.bin/eslint --init"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "express",
+    "docker"
+  ],
   "author": "Guilherme Gules Moreira",
   "license": "ISC",
   "devDependencies": {
