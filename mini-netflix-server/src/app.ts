@@ -10,7 +10,6 @@ class App {
     this.middlewares()
     this.routes()
     this.cors()
-    this.images()
   }
 
   private middlewares (): void {
@@ -27,10 +26,6 @@ class App {
       optionSuccessStatus: 200
     }
     this.express.use(cors(corsOptions))
-  }
-
-  private images (): void {
-    this.express.use(express.static(`${__dirname}/public/user-images`))
   }
 }
 
