@@ -5,4 +5,5 @@ export interface User {
   pass: string
   favFilms: string[]
   icon: string
+  isAuthenticated: boolean
 }

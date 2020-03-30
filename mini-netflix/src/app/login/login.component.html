@@ -2,8 +2,14 @@
   <img class="logo" src="../../assets/netflix.svg" alt="">
   <h2>Login</h2>
   <form class="login-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="email">
-    <input type="password" formControlName="pass">
+    <input type="text" formControlName="email" placeholder="@ Email" required>
+    <ng-template *ngIf="isFieldInvalid('email')">
+      please inform your email
+    </ng-template>
+    <input type="password" formControlName="pass" placeholder="Password" required>
+    <ng-template *ngIf="isFieldInvalid('pass')">
+      please inform your pass
+    </ng-template>
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
 </section>

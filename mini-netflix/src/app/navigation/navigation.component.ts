@@ -1,3 +1,4 @@
+import { AuthService } from './../services/auth/auth.service';
 import { Component, OnInit } from '@angular/core'
 
 @Component({
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core'
 })
 export class NavigationComponent implements OnInit {
   menuMobile: boolean = false;
-  constructor () {}
+  constructor (private authService: AuthService) {}
 
   ngOnInit (): void {}
 
   toggleMenu (): void {
     this.menuMobile = !this.menuMobile;
+  }
+
+  logout (): void {
+    this.authService.logout();
   }
 }

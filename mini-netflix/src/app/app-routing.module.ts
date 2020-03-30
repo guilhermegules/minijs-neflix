@@ -4,9 +4,10 @@ import { ProfileComponent } from './profile/profile.component'
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 import { LoginComponent } from './login/login.component'
+import { AuthGuard } from './services/auth/auth.guard'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '', component: MainPageComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'main-page', component: MainPageComponent },

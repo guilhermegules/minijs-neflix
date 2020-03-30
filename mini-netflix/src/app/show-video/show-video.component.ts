@@ -7,18 +7,20 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./show-video.component.scss']
 })
 export class ShowVideoComponent implements OnInit {
-  @Input() modalState: boolean
   @Input() videoId: string
-  closeModal: boolean;
+  closeModal: boolean
   url = `https://www.youtube.com/embed/`
   constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    this.sanitizer.bypassSecurityTrustResourceUrl(this.url)
-    this.closeModal = false;
-  } 
+  }
 
-  close(): void {
-    this.closeModal = true
+  toggleModal(): void {
+    this.closeModal = !this.closeModal
+  }
+
+  sendUrl(videoId: string) {
+    let tempUrl = this.url + videoId
+    return this.sanitizer.bypassSecurityTrustResourceUrl(tempUrl)
   }
 }
