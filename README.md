@@ -16,37 +16,37 @@ Diagrama do projeto
 
 ### images do Layout
 
-home web
+1. home web
 <img src="./imagens/web-home.png">
 
-home header web
-<img src="./imagens/web-home-header.png">
+2. cabeçalho do home web
+<img src="./imagens/web-home2.png">
 
-login web
+3. login web
 <img src="./imagens/web-login.png">
 
-metrics web
+4. metricas web
 <img src="./imagens/web-metrics.png">
 
-profile web
+5. perfil web
 <img src="./imagens/web-profile.png">
 
-show video web
+6. assistir video web
 <img src="./imagens/web-show-video.png">
 
-home mobile
+7. home mobile
 <img src="./imagens/mobile-home-menu.png">
 
-login mobile
+8. login mobile
 <img src="./imagens/mobile-login.png">
 
-metrics mobile
+9. metricas mobile
 <img src="./imagens/mobile-metrics.png">
 
-profile mobile
+10. perfil mobile
 <img src="./imagens/mobile-profile.png">
 
-show video mobile
+11. assistir video mobile
 <img src="./imagens/mobile-show-film.png">
 
 Intruções para rodar o server e o app em suas respectivas pastas
@@ -61,5 +61,6 @@ Intruções para rodar o server e o app em suas respectivas pastas
  - [x] Login com usuários mockados (deixar o mock no BFF - NodeJS).
 
 [Video demo Web](https://drive.google.com/file/d/1IO5yUvpOCjhmtli9nXJ3NtD_QEdT9LBU/view)
+<br>
 [Video demo mobile](https://drive.google.com/file/d/1e-sAMqeGsQxJLc-eAiWaDvTbojbYpktZ/view)
 
