@@ -1,13 +1,15 @@
 FROM node:alpine
 
-WORKDIR /usr/app
+ENV SERVER 3333
 
-COPY package*.json ./ 
+EXPOSE 3333
+
+COPY package.json package.json
 
 RUN npm install
 
 COPY . .
 
-EXPOSE 3333
+RUN npm run build
 
-CMD npm start
+CMD node dist/server/server.js
