@@ -12,6 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   users: User[]
+  isLoading: boolean
   profileForm = new FormGroup({
     email: new FormControl(''),
     pass: new FormControl(''),
@@ -19,22 +20,19 @@ export class LoginComponent implements OnInit {
   constructor (private authService: AuthService) {}
 
   ngOnInit (): void {
-    this.authService.signIn().subscribe((response: User[]) => this.users = response)
   }
 
   onSubmit() {
-    this.users.forEach(user => {
-      if(user.email === this.profileForm.value.email && user.pass === this.profileForm.value.pass) {
-        this.authService.login(this.profileForm.value)
-        user.isAuthenticated = true
-      }
-    })
-  }
-
-  isFieldInvalid(field: string) {
-    return (
-      (!this.profileForm.get(field).valid && this.profileForm.get(field).touched) ||
-      (this.profileForm.get(field).untouched && this.profileForm)
-    );
+    this.authService.signIn().subscribe((response: User[]) => this.users = response)
+    this.isLoading = true
+    setTimeout(() => {
+      this.users.forEach(user => {
+        if(user.email === this.profileForm.value.email && user.pass === this.profileForm.value.pass) {
+          user.isAuthenticated = true
+          localStorage.setItem("user-authenticated", JSON.stringify(user))
+          this.authService.login(this.profileForm.value)
+        }
+      })
+    }, 1000);
   }
 }

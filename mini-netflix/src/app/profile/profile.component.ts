@@ -9,17 +9,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  userProfile: User[];
+  userProfile: User
   isLoggedIn$: Observable<boolean>
   constructor (private authService: AuthService) {}
 
   ngOnInit (): void {
     this.isLoggedIn$ = this.authService.isLoggedIn
     if(this.isLoggedIn$) {
-      this.authService.signIn().subscribe((user) => {
-        this.userProfile = user
-        console.log(this.userProfile)
-      })
+      const getUser = localStorage.getItem('user-authenticated')
+      this.userProfile = JSON.parse(getUser)
     }
   }
 }

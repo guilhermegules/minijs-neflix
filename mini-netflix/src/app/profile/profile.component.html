@@ -1,13 +1,19 @@
 <section class="container">
-  <div class="user-profile" *ngFor="let item of userProfile">
-    <img src="{{ item.icon }}" alt="User Icon" />
-    <p>Nome: {{ item.name }}</p>
-    <p>Email: {{ item.email }}</p>
-    <p>Favourites Films:</p>
-    <ul>
-      <li *ngFor="let item of userProfile; let i = index">
-        {{ item.favFilms[i] }}
-      </li>
-    </ul>
+  <div class="user-profile">
+    <div class="user-icon">
+      <img src="{{ userProfile.icon }}" alt="User Icon" />
+    </div>
+    <div class="user-info">
+      <p>Nome: {{ userProfile.name }}</p>
+      <p>Email: {{ userProfile.email }}</p>
+      <div>
+        <p>Favourites Films:</p>
+        <ul>
+          <li *ngFor="let item of userProfile.favFilms; let i = index">
+            {{ userProfile.favFilms[i] }}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>

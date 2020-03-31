@@ -14,7 +14,6 @@ export class MainPageComponent implements OnInit {
   @ViewChild(ShowVideoComponent)
   showVideoModal: ShowVideoComponent
   videos: Video[];
-  // openShowVideo: boolean = true;
   videoId: string;
   categories = [
     {
@@ -47,9 +46,8 @@ export class MainPageComponent implements OnInit {
 
   toggleModal(): void {
     this.videos.forEach(video => {
-      if (video.id.videoId === this.videoId) {
-        this.videoId = video.id.videoId;
-      }
+      this.videoId = video.id.videoId
+      console.log(this.videoId)
     });
     this.showVideoModal.toggleModal()
   }

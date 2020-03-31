@@ -1,15 +1,25 @@
 <section class="container">
-  <img class="logo" src="../../assets/netflix.svg" alt="">
+  <img class="logo" src="../../assets/netflix.svg" alt="" />
   <h2>Login</h2>
   <form class="login-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="email" placeholder="@ Email" required>
-    <ng-template *ngIf="isFieldInvalid('email')">
-      please inform your email
-    </ng-template>
-    <input type="password" formControlName="pass" placeholder="Password" required>
-    <ng-template *ngIf="isFieldInvalid('pass')">
-      please inform your pass
-    </ng-template>
+    <input
+      type="text"
+      formControlName="email"
+      placeholder="@ Email"
+      required
+    />
+    <input
+      type="password"
+      formControlName="pass"
+      placeholder="Password"
+      required
+    />
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
+  <div *ngIf="isLoading">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
 </section>
