@@ -1,6 +1,7 @@
 import { VideosService } from './../services/videos/videos.service';
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Video } from '../services/videos/video';
+import { ShowVideoComponent } from '../show-video/show-video.component';
 
 @Component({
   selector: 'app-metrics',
@@ -8,26 +9,34 @@ import { Video } from '../services/videos/video';
   styleUrls: ['./metrics.component.scss']
 })
 export class MetricsComponent implements OnInit {
-  videos: Video[]
+  @ViewChild(ShowVideoComponent)
+  showVideoModal: ShowVideoComponent;
+  videos: Video[];
+  videoId: string;
   categories = [
     {
       id: 1,
-      title: 'Most popular'
-    }, 
+      title: 'Mais populares'
+    },
     {
       id: 2,
-      title: 'Recent'
+      title: 'Recentes'
     },
     {
       id: 3,
       title: 'Originals'
     },
-  ]
+  ];
   constructor(private videosService: VideosService) { }
 
   ngOnInit(): void {
     this.videosService
       .getVideos()
-      .subscribe((data: Video[]) => this.videos = data)
+      .subscribe((data: Video[]) => this.videos = data);
+  }
+
+  toggleModal(id: string): void {
+    this.videoId = id;
+    this.showVideoModal.toggleModal();
   }
 }

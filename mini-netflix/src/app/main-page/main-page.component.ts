@@ -1,40 +1,40 @@
 import { Observable } from 'rxjs';
-import { ShowVideoComponent } from "./../show-video/show-video.component";
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { Video } from "../services/videos/video";
-import { VideosService } from "./../services/videos/videos.service";
+import { ShowVideoComponent } from './../show-video/show-video.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Video } from '../services/videos/video';
+import { VideosService } from './../services/videos/videos.service';
 import { AuthService } from '../services/auth/auth.service';
 
 @Component({
-  selector: "app-main-page",
-  templateUrl: "./main-page.component.html",
-  styleUrls: ["./main-page.component.scss"]
+  selector: 'app-main-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
   @ViewChild(ShowVideoComponent)
-  showVideoModal: ShowVideoComponent
+  showVideoModal: ShowVideoComponent;
   videos: Video[];
   videoId: string;
   categories = [
     {
       id: 1,
-      title: "Your list"
+      title: 'Sua lista'
     },
     {
       id: 2,
-      title: "Originals"
+      title: 'Originals'
     },
     {
       id: 3,
-      title: "Horror"
+      title: 'Horror'
     },
     {
       id: 4,
-      title: "Documentary"
+      title: 'Documentário'
     },
     {
       id: 5,
-      title: "Popular"
+      title: 'Popular'
     }
   ];
   constructor(private videosService: VideosService) {}
@@ -44,11 +44,8 @@ export class MainPageComponent implements OnInit {
       .subscribe((data: Video[]) => (this.videos = data));
   }
 
-  toggleModal(): void {
-    this.videos.forEach(video => {
-      this.videoId = video.id.videoId
-      console.log(this.videoId)
-    });
-    this.showVideoModal.toggleModal()
+  toggleModal(id: string): void {
+    this.videoId = id;
+    this.showVideoModal.toggleModal();
   }
 }

@@ -1,6 +1,6 @@
 <section class="container">
-  <h2 class="title">Metrics</h2>
-  <h3 class="subtitle">Se the most popular films</h3>
+  <h2 class="title">Metricas</h2>
+  <h3 class="subtitle">Vejas os filmes mais populares</h3>
   <div class="categorie" *ngFor="let categorie of categories">
     <h4>{{categorie.title}}</h4>
     <div class="videos-metrics">
@@ -8,7 +8,9 @@
         *ngFor="let video of videos"
         src="{{ video.snippet.thumbnails.medium.url }}"
         alt="Video image"
+        (click)="toggleModal(video.id.videoId)"
       />
     </div>
   </div>
+  <app-show-video [videoId]="videoId"></app-show-video>
 </section>

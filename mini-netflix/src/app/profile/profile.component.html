@@ -7,7 +7,7 @@
       <p>Nome: {{ userProfile.name }}</p>
       <p>Email: {{ userProfile.email }}</p>
       <div>
-        <p>Favourites Films:</p>
+        <p>Filmes favoritos:</p>
         <ul>
           <li *ngFor="let item of userProfile.favFilms; let i = index">
             {{ userProfile.favFilms[i] }}

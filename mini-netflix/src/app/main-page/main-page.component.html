@@ -12,7 +12,7 @@
           class="film-image"
           src="{{ video.snippet.thumbnails.medium.url }}"
           alt="{{ video.snippet.title }}"
-          (click)="toggleModal()"
+          (click)="toggleModal(video.id.videoId)"
         />
       </div>
     </div>

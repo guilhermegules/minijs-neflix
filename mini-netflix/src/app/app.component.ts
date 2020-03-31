@@ -1,7 +1,7 @@
-import { Component } from '@angular/core'
-import { Router } from '@angular/router'
-import { AuthService } from './services/auth/auth.service'
-import { Observable } from 'rxjs'
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './services/auth/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,13 @@ import { Observable } from 'rxjs'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mini-netflix'
-  isLoggedIn$: Observable<boolean>
+  title = 'mini-netflix';
+  isLoggedIn$: Observable<boolean>;
   constructor(private authService: AuthService) {
-  }
-  
-  ngOnInit() {
-    this.isLoggedIn$ = this.authService.isLoggedIn
+    this.isLoggedIn$ = this.authService.isLoggedIn;
   }
 
   onLogount(): void {
-    this.authService.logout()
+    this.authService.logout();
   }
 }
