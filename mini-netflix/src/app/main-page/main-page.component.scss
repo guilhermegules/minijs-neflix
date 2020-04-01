@@ -18,6 +18,8 @@ h4 {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  scrollbar-color: red transparent;
+  scrollbar-width: thin;
   img {
     margin-right: .1em;
     transition: .3s ease-in-out;

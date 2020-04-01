@@ -3,12 +3,14 @@
   <h2>Login</h2>
   <form class="login-form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <input
+      class="email"
       type="text"
       formControlName="email"
       placeholder="@ Email"
       required
     />
     <input
+      class="pass"
       type="password"
       formControlName="pass"
       placeholder="Password"

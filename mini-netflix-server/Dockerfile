@@ -1,6 +1,6 @@
 FROM node:alpine
 
-ENV SERVER 3333
+ENV PORT 3333
 
 EXPOSE 3333
 

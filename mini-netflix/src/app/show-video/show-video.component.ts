@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-show-video',
@@ -19,7 +19,7 @@ export class ShowVideoComponent implements OnInit {
     this.closeModal = !this.closeModal;
   }
 
-  sendUrl(videoId: string) {
+  sendUrl(videoId: string): SafeResourceUrl {
     const tempUrl = this.url + videoId;
     return this.sanitizer.bypassSecurityTrustResourceUrl(tempUrl);
   }

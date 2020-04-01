@@ -25,7 +25,7 @@ routes.get('/users', (req, res) => {
 })
 
 routes.get('/', (req, res) => {
-  res.send('access /videos from videos info <br> acess /login from users info')
+  res.send('access /videos from videos info <br> acess /users from users info')
 })
 
 routes.get('*', (req, res) => {
