@@ -43,7 +43,7 @@ Diagrama do projeto
 11. assistir video mobile
 <img src="./imagens/mobile-show-film.png">
 
-Intruções para rodar o server e o app em suas respectivas pastas
+Instruções para rodar o server e o app em suas respectivas pastas
 
 #### Problema
  Construir um mini netflix em JS.
