@@ -4,3 +4,6 @@ This project create a mini version of netflix with [YoutubeAPI](https://develope
 
 - Criar imagem da aplicação `docker-compose build`;
 - Rodar aplicação com docker compose `docker-compose up`.
+<br>
+
+App vai rodar no `http://localhost:8081/`
