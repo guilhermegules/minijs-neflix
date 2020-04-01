@@ -4,12 +4,6 @@ Projeto feito com Angular e NodeJS.
 
 A idéia do projeto é desenvolver uma mini netflix utilizando JavaScript.
 
-Depedências NodeJS: 
-    - axios;
-    - cors;
-    - dotenv;
-    - express;
-
 Diagrama do projeto
 
 <img src="./imagens/projeto-junior.jpg" height="350" width="350">
